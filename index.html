@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html lang=en>
+
+<script>
+    let computer_choice = 0
+let rock = 0
+let paper = 0
+let scissors = 0
+input.onButtonPressed(Button.A, function () {
+    scissors = 1
+    computer_choice = Math.randomRange(0, 2)
+    basic.showLeds(`
+        # . . # #
+        . # . # #
+        . . # . .
+        . # . # #
+        # . . # #
+        `)
+    if (scissors > computer_choice) {
+        basic.showIcon(IconNames.Yes)
+    } else if (scissors == computer_choice) {
+        basic.showLeds(`
+            . . . . .
+            # # # # #
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    paper = 1
+    computer_choice = Math.randomRange(0, 2)
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    if (paper > computer_choice) {
+        basic.showIcon(IconNames.Yes)
+    } else if (paper == computer_choice) {
+        basic.showLeds(`
+            . . . . .
+            # # # # #
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.AB, function () {
+    rock = 1
+    computer_choice = Math.randomRange(0, 2)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+    if (rock > computer_choice) {
+        basic.showIcon(IconNames.Yes)
+    } else if (rock == computer_choice) {
+        basic.showLeds(`
+            . . . . .
+            # # # # #
+            . . . . .
+            # # # # #
+            . . . . .
+            `)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
+    basic.clearScreen()
+})
+basic.showString("lets play!")
+</script>
+
+
+
+</html>
